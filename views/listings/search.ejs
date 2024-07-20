@@ -1,0 +1,91 @@
+<% layout ("/layouts/boilerplate")%>
+<div class="row">
+  <div class="col-8 offset-2">
+    <br ><br />
+    <h3>Search based on your requirements</h3>
+    <form method="GET" action="/listings/search" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control" required/>
+        <div class="valid-feedback">
+          Title looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please enter a valid title!
+        </div>
+      </div>
+
+      <div class="mb-3 col-8">
+        <label for="Country" class="form-label">Country</label>
+        <input name="listing[country]" placeholder="India" type="text" class="form-control" required/>
+        <div class="valid-feedback">
+          Country looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please enter the valid country name!
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="Location" class="form-label">Location</label>
+        <input name="listing[location]" placeholder="Goa, Jaipur" type="text" class="form-control" required/>
+        <div class="valid-feedback">
+          Location looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please enter the valid location!
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-4">
+          <label for="minPrice" class="form-label">Minimum Price</label>
+          <input name="minPrice" placeholder="1000" type="number" class="form-control" required/>
+          <div class="valid-feedback">
+            Minimum Price looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please enter a valid minimum price!
+          </div>
+        </div>
+
+        <div class="mb-3 col-4">
+          <label for="maxPrice" class="form-label">Maximum Price</label>
+          <input name="maxPrice" placeholder="5000" type="number" class="form-control" required/>
+          <div class="valid-feedback">
+            Maximum Price looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please enter a valid maximum price!
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="amenities" class="form-label">Amenities</label>
+        <select name="amenities" class="form-control" required>
+          <option value="">Select Amenities</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Iconic cities">Iconic cities</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Castle">Castle</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+          <option value="Camping">Camping</option>
+          <option value="Farms">Farms</option>
+          <option value="Arctic">Arctic</option>
+          <option value="Domes">Domes</option>
+          <option value="Boats">Boats</option>
+        </select>
+        <div class="valid-feedback">
+          Amenities look good!
+        </div>
+        <div class="invalid-feedback">
+          Please select an amenity!
+        </div>
+      </div>
+
+      <button class="btn btn-dark add-btn mt-3">Search</button>
+      <br ><br />
+    </form>
+  </div>
+</div>
