@@ -25,8 +25,6 @@ const userRouter = require("./routes/user.js");
 
 
 const dbUrl = process.env.ATLASDB_URL;
-//console.log('MongoDB URL:', process.env.ATLASDB_URL);
-
 main()
   .then(() => {
     console.log("Connected to database");
@@ -70,9 +68,6 @@ const sessionOptions = {
   }
 };
 
-// app.get("/", (req, res) => {
-//   res.send("Hi, I am root");
-// });
 
 app.use(session(sessionOptions));
 app.use(flash());
