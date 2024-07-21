@@ -1,5 +1,5 @@
 const axios = require('axios');
-const Listing = require("../models/listing.js");
+
 
 const MAPTILER_API_KEY = process.env.MAP_TOKEN;
 
