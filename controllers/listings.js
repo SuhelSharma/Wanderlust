@@ -2,7 +2,7 @@ const axios = require('axios');
 const Listing = require("../models/listing.js");
 const MAPTILER_API_KEY = process.env.MAP_TOKEN;
 
-// Function to geocode an address using sMapTiler (forward geocoding)
+// Function to geocode an address using MapTiler (forward geocoding)
 async function geocodeAddress(address, biasLocation = null) {
   let url = `https://api.maptiler.com/geocoding/${encodeURIComponent(address)}.json?key=${MAPTILER_API_KEY}`;
   if (biasLocation) {
@@ -57,7 +57,6 @@ module.exports.createRoute = async (req, res, next) => {
   newListing.image = { url, filename };
 
   try {
-    // Geocode address
     const address = req.body.listing.location;
     const [longitude, latitude] = await geocodeAddress(address);
     newListing.geometry = {
@@ -105,7 +104,6 @@ module.exports.updateRoute = async (req, res, next) => {
       await listing.save();
     }
   
-    // Geocode address if location is updated
     if (req.body.listing.location) {
       const address = req.body.listing.location;
       const [longitude, latitude] = await geocodeAddress(address);
