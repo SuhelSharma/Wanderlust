@@ -14,7 +14,7 @@ router.route("/")
           upload.single("listing[image][url]"),
           wrapAsync(listingController.createRoute));
 
-router.get("/new", isLoggedIn, listingController.renderNewForm);
+router.get("/new",  listingController.renderNewForm);
 
 router.route("/:id")
     .get(wrapAsync(listingController.showRoute))
